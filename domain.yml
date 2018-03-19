@@ -1,6 +1,9 @@
+action_factory: remote
+
 intents:
-  - greet
-  - goodbye
+- greet
+- goodbye
+- request_info
 
 actions:
 - utter_greet
@@ -22,3 +25,5 @@ slots:
   applicaton:
     type: text
     
+entities:
+- application

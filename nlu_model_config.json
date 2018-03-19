@@ -1,6 +1,7 @@
 {
   "pipeline": "spacy_sklearn",
-  "path" : "./models",
-  "data" : "./data/ocd-guy-nlu.md",
-  "cors_origins": ["*"]
+  "path": "./models",
+  "data": "./data/ocd-guy-nlu.md",
+  "project": "nlu",
+  "cors_origins": ["*","127.0.0.1"]
 }

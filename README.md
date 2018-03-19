@@ -6,8 +6,8 @@ Chatbot uses RASA framework for language understanding and dialog processing
 ```
 ocdguybot/
 +-- data/
-¦   +-- ocd-guy-stories.md            # dialogue training data
-¦   +-- ocd-guy-nlu.md                # nlu training data
+Å    +-- ocd-guy-stories.md            # dialogue training data
+Å    +-- ocd-guy-nlu.md                # nlu training data
 +-- domain.yml                        # dialogue configuration
 +-- nlu_model_config.json             # nlu configuration
 ```
@@ -32,10 +32,23 @@ python -m rasa_nlu.train -c nlu_model_config.json --fixed_model_name current
 python -m rasa_core.train -s data/ocd-guy-stories.md -d domain.yml -o models/dialogue --epochs 300
 
 
-Start RASA-NLU Server
----------------------
+Run RASA-CORE in command line
+-----------------------------
+
+python -m rasa_core.run -d models/dialogue -u models/default/current
+
+
+Start RASA-NLU Server (if you only want Intent services)
+--------------------------------------------------------
 
 python -m rasa_nlu.server -c config/config_spacy.json
+
+
+Start RASA-CORE Server
+----------------------
+
+python -m rasa_core.server -d models/dialogue -u models/default/current -o out.log --cors '*'
+
 
 
 More Info
