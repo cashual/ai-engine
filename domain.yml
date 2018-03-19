@@ -1,0 +1,24 @@
+intents:
+  - greet
+  - goodbye
+
+actions:
+- utter_greet
+- utter_for_which_application
+- utter_goodbye
+
+templates:
+  utter_greet:
+  - text: "Hi {name}, how can I help?"
+  - text: "Hello {name}, how can I help you?"
+
+  utter_for_which_application:
+  - text: "For which application?"
+
+  utter_goodbye:
+  - text: "Bye"
+  
+slots:
+  applicaton:
+    type: text
+    
