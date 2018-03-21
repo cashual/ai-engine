@@ -4,11 +4,13 @@ intents:
 - greet
 - goodbye
 - request_info
+- check_ocd_status
 
 actions:
 - utter_greet
 - utter_for_which_application
 - utter_goodbye
+- utter_ocd_status
 
 templates:
   utter_greet:

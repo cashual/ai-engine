@@ -16,8 +16,12 @@
         "synonyms": ["controls", "OCD controls", "control"]
       },
       {
+        "value": "OCD",
+        "synonyms": ["Operational Control Database", "ocd"]
+      },
+      {
         "value": "application",
-        "synonyms": ["app"]
+        "synonyms": ["app","gcashapi","com","cam","cashorderapi"]
       }
     ],
     "common_examples": [
@@ -117,9 +121,26 @@
         "entities": []
       },
       {
-        "text": "i'm looking for a place to eat",
-        "intent": "restaurant_search",
+        "text": "do I have any controls expiring",
+        "intent": "check_ocd_status",
         "entities": []
+      },
+      {
+        "text": "how is my OCD",
+        "intent": "check_ocd_status",
+        "entities": []
+      },
+      {
+        "text": "how is my OCD for gcashapi",
+        "intent": "check_ocd_status",
+        "entities": [
+          {
+            "start": 18,
+            "end": 26,
+            "value": "gcashapi",
+            "entity": "application"
+          }
+        ]
       },
       {
         "text": "I want to grab lunch",
@@ -306,7 +327,7 @@
         "entities": []
       }, 
       {
-        "text": "end", 
+        "text": "end",
         "intent": "goodbye", 
         "entities": []
       },
