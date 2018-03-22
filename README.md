@@ -28,6 +28,8 @@ RASA Setup
 Train:
 ------
 
+python -m rasa_nlu.train -c nlu_model_config.json
+
 python -m rasa_nlu.train -c nlu_model_config.json --fixed_model_name current
 python -m rasa_core.train -s data/ocd-guy-stories.md -d domain.yml -o models/dialogue --epochs 300
 
@@ -41,7 +43,7 @@ python -m rasa_core.run -d models/dialogue -u models/default/current
 Start RASA-NLU Server (if you only want Intent services)
 --------------------------------------------------------
 
-python -m rasa_nlu.server -c config/config_spacy.json
+python -m rasa_nlu.server -c nlu_model_config.json
 
 
 Start RASA-CORE Server

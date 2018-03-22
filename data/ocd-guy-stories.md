@@ -1,16 +1,9 @@
-## happy path               <!-- name of the story - just for debugging -->
+## Generated Story 762598538676173587
 * greet
   - utter_greet
-
-## say goodbye
 * goodbye
   - utter_goodbye
-
 * check_status
   - utter_status
-
-* inform
-  - utter_info
-
-* get_help
-  - utter_help
+* upload_evidence
+  -utter_upload_evidence

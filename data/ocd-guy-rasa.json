@@ -119,6 +119,16 @@
         ]
       },
       {
+        "text": "upload generic evidence",
+        "intent": "upload_evidence",
+        "entities": []
+      },
+      {
+        "text": "upload evidence",
+        "intent": "upload_evidence",
+        "entities": []
+      },
+      {
         "text": "is there any evidence that i have to add",
         "intent": "inform",
         "entities": []

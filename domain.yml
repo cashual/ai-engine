@@ -23,6 +23,7 @@ actions:
  - utter_goodbye
  - utter_status
  - utter_help
+ - utter_upload_evidence
 
 templates:
   utter_greet:
