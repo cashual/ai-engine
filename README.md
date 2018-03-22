@@ -47,7 +47,7 @@ python -m rasa_nlu.server -c config/config_spacy.json
 Start RASA-CORE Server
 ----------------------
 
-python -m rasa_core.server -d models/dialogue -u models/default/current -o out.log --cors '*'
+python -m rasa_core.server -d models/dialogue -u models/nlu/default/current -o out.log --cors '*'
 
 
 

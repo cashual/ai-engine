@@ -6,6 +6,11 @@
 * goodbye
   - utter_goodbye
 
-## check ocd status
-* check_ocd_status
-  - utter_ocd_status
+* check_status
+  - utter_status
+
+* inform
+  - utter_info
+
+* get_help
+  - utter_help
