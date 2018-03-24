@@ -3,11 +3,17 @@
     "entity_synonyms": [
       {
         "value": "OCD",
-        "synonyms": ["ocd", "Operational Control Dashboard"]
+        "synonyms": [
+          "ocd",
+          "Operational Control Dashboard"
+        ]
       },
       {
         "value": "AccountInterface",
-        "synonyms": ["account interface","AI"]
+        "synonyms": [
+          "account interface",
+          "AI"
+        ]
       }
     ],
     "common_examples": [
@@ -166,6 +172,114 @@
             "end": 23,
             "value": "OCD",
             "entity": "application-name"
+          }
+        ]
+      },
+      {
+        "text": "what is OCD",
+        "intent": "get_definition",
+        "entities": [
+          {
+            "start": 8,
+            "end": 11,
+            "value": "OCD",
+            "entity": "subject"
+          }
+        ]
+      },
+      {
+        "text": "define OCD",
+        "intent": "get_definition",
+        "entities": [
+          {
+            "start": 7,
+            "end": 10,
+            "value": "OCD",
+            "entity": "subject"
+          }
+        ]
+      },
+      {
+        "text": "what is AOSG",
+        "intent": "get_definition",
+        "entities": [
+          {
+            "start": 8,
+            "end": 12,
+            "value": "AOSG",
+            "entity": "subject"
+          }
+        ]
+      },
+      {
+        "text": "what is SEMA",
+        "intent": "get_definition",
+        "entities": [
+          {
+            "start": 8,
+            "end": 12,
+            "value": "SEMA",
+            "entity": "subject"
+          }
+        ]
+      },
+      {
+        "text": "define SEMA",
+        "intent": "get_definition",
+        "entities": [
+          {
+            "start": 7,
+            "end": 11,
+            "value": "SEMA",
+            "entity": "subject"
+          }
+        ]
+      },
+      {
+        "text": "which controls are expiring in the next 15 days?",
+        "intent": "search_controls",
+        "entities": [
+          {
+            "start": 19,
+            "end": 27,
+            "value": "red",
+            "entity": "control_state"
+          }
+        ]
+      },
+      {
+        "text": "which controls will become red in the next 15 days?",
+        "intent": "search_controls",
+        "entities": [
+          {
+            "start": 27,
+            "end": 30,
+            "value": "red",
+            "entity": "control_state"
+          }
+        ]
+      },
+      {
+        "text": "show me controls expiring in the next 15 days",
+        "intent": "search_controls",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "red",
+            "entity": "control_state"
+          }
+        ]
+      },
+      {
+        "text": "list controls expiring in the next month",
+        "intent": "search_controls",
+        "entities": [
+          {
+            "start": 14,
+            "end": 22,
+            "value": "red",
+            "entity": "control_state"
           }
         ]
       }

@@ -23,6 +23,7 @@ RASA Setup
 - Install RASA-NLU: pip install rasa_nlu[spacy]
 - Install module: python -m spacy download en_core_web_md
 - Link module: python -m spacy link en_core_web_md en
+- Install Ducking: pip install duckling
 - Install RASA-CORE: - pip install rasa_core
 
 Train:

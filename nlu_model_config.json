@@ -1,6 +1,7 @@
 {
-  "pipeline": "spacy_sklearn",
+  "pipeline": ["nlp_spacy", "tokenizer_spacy", "intent_entity_featurizer_regex", "intent_featurizer_spacy", "ner_crf", "ner_synonyms", "ner_duckling",  "intent_classifier_sklearn"],
   "path": "./models/nlu",
   "data": "./data/ocd-guy-rasa.json",
+  "duckling_dimensions": ["time","number","ordinal","duration"],
   "cors_origins": ["*","127.0.0.1"]
 }

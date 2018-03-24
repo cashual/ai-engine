@@ -9,11 +9,14 @@ intents:
  - create_story
  - upload_evidence
  - get_help
+ - get_definition
+ - search_controls
 
 entities:
  - application-name
  - control-name
- - date
+ - subject
+ - control_state
 
 actions:
  - utter_greet
