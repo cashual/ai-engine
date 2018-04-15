@@ -18,6 +18,61 @@
     ],
     "common_examples": [
       {
+        "text": "yes",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "yep",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "yeah",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "indeed",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "that's right",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "ok",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "great",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "right, thank you",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "correct",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "great choice",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
+        "text": "sounds really good",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
         "text": "Hello",
         "intent": "greet",
         "entities": []
@@ -280,6 +335,66 @@
             "end": 22,
             "value": "red",
             "entity": "control_state"
+          }
+        ]
+      },
+      {
+        "text": "I am Carlos",
+        "intent": "tell_name",
+        "entities": [
+          {
+            "start": 5,
+            "end": 11,
+            "value": "Carlos",
+            "entity": "user-name"
+          }
+        ]
+      },
+      {
+        "text": "My name is Carlos",
+        "intent": "tell_name",
+        "entities": [
+          {
+            "start": 11,
+            "end": 17,
+            "value": "Carlos",
+            "entity": "user-name"
+          }
+        ]
+      },
+      {
+        "text": "I'm Carlos",
+        "intent": "tell_name",
+        "entities": [
+          {
+            "start": 4,
+            "end": 10,
+            "value": "Carlos",
+            "entity": "user-name"
+          }
+        ]
+      },
+      {
+        "text": "They call me Carlos",
+        "intent": "tell_name",
+        "entities": [
+          {
+            "start": 13,
+            "end": 19,
+            "value": "Carlos",
+            "entity": "user-name"
+          }
+        ]
+      },
+      {
+        "text": "You can call me Carlos",
+        "intent": "tell_name",
+        "entities": [
+          {
+            "start": 16,
+            "end": 22,
+            "value": "Carlos",
+            "entity": "user-name"
           }
         ]
       }

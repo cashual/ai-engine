@@ -38,7 +38,7 @@ python -m rasa_core.train -s data/ocd-guy-stories.md -d domain.yml -o models/dia
 Run RASA-CORE in command line
 -----------------------------
 
-python -m rasa_core.run -d models/dialogue -u models/default/current
+python -m rasa_core.run -d models/dialogue -u models/nlu/default/current
 
 
 Start RASA-NLU Server (if you only want Intent services)

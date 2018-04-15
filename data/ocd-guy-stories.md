@@ -1,5 +1,10 @@
 ## Generated Story 762598538676173587
 * greet
+  - slot{"user-name": null}
+  - utter_ask_name
+* greet
+  - slot{"user-name": "Carlos"}
+  - utter_introduce
   - utter_greet
 * goodbye
   - utter_goodbye

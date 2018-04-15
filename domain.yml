@@ -3,6 +3,7 @@ action_factory: remote
 intents:
  - greet
  - goodbye
+ - affirm
  - inform
  - check_status
  - fix_control
@@ -11,15 +12,19 @@ intents:
  - get_help
  - get_definition
  - search_controls
+ - tell_name
 
 entities:
  - application-name
  - control-name
  - subject
  - control_state
+ - user-name
 
 actions:
  - utter_greet
+ - utter_ask_name
+ - utter_introduce
  - utter_info
  - utter_for_which_application
  - utter_for_which_control
@@ -42,7 +47,15 @@ templates:
     - 'Bye and have a good day!'
 
 slots:
+  user-name:
+    type: text
   application-name:
     type: text
   control-name:
+    type: text
+  number:
+    type: text
+  time:
+    type: text
+  duration:
     type: text
