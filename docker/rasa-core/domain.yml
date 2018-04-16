@@ -5,7 +5,6 @@ intents:
  - goodbye
  - restart
  - affirm
- - inform
  - check_status
  - fix_control
  - create_story
