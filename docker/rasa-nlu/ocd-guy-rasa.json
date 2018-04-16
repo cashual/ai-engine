@@ -170,6 +170,18 @@
         ]
       },
       {
+        "text": "what's up with my OCD",
+        "intent": "check_status",
+        "entities": [
+          {
+            "start": 18,
+            "end": 21,
+            "value": "OCD",
+            "entity": "application-name"
+          }
+        ]
+      },
+      {
         "text": "What is going on with my OCD?",
         "intent": "check_status",
         "entities": [
@@ -210,7 +222,7 @@
         "entities": []
       },
       {
-        "text": "is there any evidence that i have to add",
+        "text": "is there any evidence that I have to add",
         "intent": "inform",
         "entities": []
       },
