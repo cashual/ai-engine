@@ -1,61 +1,96 @@
 Ai Engine - Chatbot Machine Language
 ====================================
 
-Chatbot uses RASA framework for language understanding and dialog processing
+Chatbot uses RASA framework for language understanding and dialog processing.
 
-```
-ocdguybot/
-+-- data/
-Š   +-- ocd-guy-stories.md            # dialogue training data
-Š   +-- ocd-guy-nlu.md                # nlu training data
-+-- domain.yml                        # dialogue configuration
-+-- nlu_model_config.json             # nlu configuration
-```
+RASA-NLU interprets natural languange text and extracts intents and entities.
 
-RASA Setup
-==========
+RASA-CORE uses RASA-NLU and adds dialogue processing.
 
-- Install Python
-- Install Microsoft Visual C++ 9.0 is required. Get it from http://aka.ms/vcpython27
-- Open a command line (Run CMD as Administrator in Windows)
-- Install win32api: pip install pypiwin32
-- Install tensorflow: pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.0.1-py2-none-any.whl
-- Install RASA-NLU: pip install rasa_nlu[spacy]
-- Install module: python -m spacy download en_core_web_md
-- Link module: python -m spacy link en_core_web_md en
-- Install Ducking: pip install duckling
-- Install RASA-CORE: - pip install rasa_core
-
-Train:
-------
-
-python -m rasa_nlu.train -c nlu_model_config.json
-
-python -m rasa_nlu.train -c nlu_model_config.json --fixed_model_name current
-python -m rasa_core.train -s data/ocd-guy-stories.md -d domain.yml -o models/dialogue --epochs 300
+This project assembles two docker container images. One with RASA-NLU which can be used independently to extract intents and entities 
+from text and another RASA-CORE wich builds on the first and adds dialog processing.
 
 
-Run RASA-CORE in command line
+RASA-NLU
+========
+
+Provides RASA-NLU as an http server.
+
+Location: ./docker/rasa-nlu
+
+Docker image name: ocd-rasa-nlu
+
+Preparing the trining data
+--------------------------
+
+Edit the file `ocd-guy-rasa.json`
+
+For more information see https://nlu.rasa.com/tutorial.html
+
+
+Building the docker image
+-------------------------
+
+Run the script `build.sh`
+
+Running the docker container
+----------------------------
+
+Run the script `run.sh`
+
+
+Accessing the RASA-NLU server
 -----------------------------
 
-python -m rasa_core.run -d models/dialogue -u models/nlu/default/current
+Use the rest endpoints (see https://nlu.rasa.com/http.html) at localhost:5000
 
 
-Start RASA-NLU Server (if you only want Intent services)
---------------------------------------------------------
 
-python -m rasa_nlu.server -c nlu_model_config.json
+RASA-CORE
+=========
+
+Provides RASA-CORE as an http server.
+
+Location: ./docker/rasa-core
+
+Docker image name: ocd-rasa-core
+
+Defining the Domain
+-------------------
+
+Edit the file `domain.yml`
+
+For more information see https://core.rasa.com/tutorial_basics.html
 
 
-Start RASA-CORE Server
-----------------------
+Defining the user stories
+-------------------------
 
-python -m rasa_core.server -d models/dialogue -u models/nlu/default/current -o out.log --cors '*'
+Edit the file `ocd-guy-stories.md`
+
+For more information see https://core.rasa.com/tutorial_basics.html
+
+
+Building the docker image
+-------------------------
+
+Run the script `build.sh`
+
+Running the docker container
+----------------------------
+
+Run the script `run.sh`
+
+
+Accessing the RASA-CORE server
+-----------------------------
+
+Use the rest endpoints (see https://core.rasa.com/http.html) at localhost:5005
 
 
 
 More Info
----------
+=========
 
 See:
 

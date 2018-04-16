@@ -4,7 +4,7 @@ WORKDIR /app
 
 ADD nlu_model_config.json /app
 
-ADD data /app/data
+ADD ocd-guy-rasa.json /app/data/ocd-guy-rasa.json
 
 RUN pip3 install rasa_nlu[spacy]
 

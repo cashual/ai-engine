@@ -138,6 +138,26 @@
         "entities": []
       },
       {
+        "text": "Lets start again",
+        "intent": "restart",
+        "entities": []
+      },
+      {
+        "text": "Can we start over?",
+        "intent": "restart",
+        "entities": []
+      },
+      {
+        "text": "Lets restart this conversation",
+        "intent": "restart",
+        "entities": []
+      },
+      {
+        "text": "This conversation is going nowhere",
+        "intent": "restart",
+        "entities": []
+      },
+      {
         "text": "Check the OCD for me",
         "intent": "check_status",
         "entities": [

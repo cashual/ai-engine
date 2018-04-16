@@ -8,6 +8,8 @@
   - utter_greet
 * goodbye
   - utter_goodbye
+* restart
+  - restart_conversation
 * check_status
   - utter_status
 * upload_evidence

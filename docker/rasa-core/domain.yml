@@ -3,6 +3,7 @@ action_factory: remote
 intents:
  - greet
  - goodbye
+ - restart
  - affirm
  - inform
  - check_status
@@ -32,19 +33,7 @@ actions:
  - utter_status
  - utter_help
  - utter_upload_evidence
-
-templates:
-  utter_greet:
-    - 'Hi, how can I help?'
-    - 'Hello, how can I help you?'
-
-  utter_for_which_application:
-    - 'For which application?'
-
-  utter_goodbye:
-    - 'Talk to you later.'
-    - 'Bye bye :('
-    - 'Bye and have a good day!'
+ - restart_conversation
 
 slots:
   user-name:
