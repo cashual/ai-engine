@@ -1,8 +1,8 @@
 ## This file is read by the chatbot backend to provide just text replies to utter type actions
 * utter_greet
-  -Hello
-  -Hi
-  -Howdy
+  -Hello ${user-name}
+  -Hi ${user-name}
+  -Howdy ${user-name}
 * utter_goodbye
   -Bye-bye
   -Goodbye
