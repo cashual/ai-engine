@@ -23,7 +23,7 @@ Docker image name: ocd-rasa-nlu
 Preparing the trining data
 --------------------------
 
-Edit the file `ocd-guy-rasa.json`
+Edit the file `ocd-guy-nlu.md`
 
 For more information see https://nlu.rasa.com/tutorial.html
 
