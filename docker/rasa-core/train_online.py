@@ -20,7 +20,7 @@ def run_concertbot_online(input_channel, interpreter,
                           domain_file="domain.yml",
                           training_data_file='data/ocd-guy-stories.md'):
 
-    agent = Agent.load("models/dialogue", interpreter=interpreter)
+    agent = Agent.load("data/models/dialogue", interpreter=interpreter)
     
     agent.train_online(training_data_file,
                        input_channel=input_channel,
@@ -34,4 +34,4 @@ def run_concertbot_online(input_channel, interpreter,
 
 if __name__ == '__main__':
     utils.configure_colored_logging(loglevel="INFO")
-    run_concertbot_online(ConsoleInputChannel(), RasaNLUInterpreter("models/nlu/default/current"))
+    run_concertbot_online(ConsoleInputChannel(), RasaNLUInterpreter("data/models/nlu/default/current"))
