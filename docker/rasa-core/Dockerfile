@@ -3,7 +3,7 @@ FROM ocd-rasa-nlu
 WORKDIR /app
 
 ADD domain.yml /app
-
+ADD train_online.py /app
 ADD ocd-guy-stories.md /app/data/ocd-guy-stories.md
 
 RUN pip3 install rasa_core
