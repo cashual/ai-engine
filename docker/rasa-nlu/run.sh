@@ -1,2 +1,2 @@
-docker run -p 5000:5000 ocd-rasa-nlu
+docker run -p 5000:5000 --rm ocd-rasa-nlu
 

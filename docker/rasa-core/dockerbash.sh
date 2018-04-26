@@ -1,1 +1,1 @@
-docker run --mount source=ocd-rasa-data,target=/app/data -it ocd-rasa-core bash
+docker run -it --rm --mount type=volume,bind-propagation=shared,source=ocd-rasa-data,target=/app/data ocd-rasa-core bash
