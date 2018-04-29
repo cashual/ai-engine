@@ -1,22 +1,6 @@
 FROM tensorflow/tensorflow:latest-py3
 
-WORKDIR /app
-
-ADD nlu_model_config.json /app
-
-ADD ocd-guy-nlu.md /app/data/ocd-guy-nlu.md
-
 RUN pip3 install --upgrade pip
-
-RUN pip3 install rasa_nlu[spacy]
-
-RUN python3 -m spacy download en_core_web_md
-
-RUN python3 -m spacy link en_core_web_md en
-
-RUN pip3 install duckling
-
-RUN pip3 install rasa_core
 
 # Install Java.
 RUN \
@@ -34,10 +18,3 @@ RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-
-RUN cd /app && python3 -m rasa_nlu.train -c nlu_model_config.json --fixed_model_name current
-
-EXPOSE 5000
-
-CMD [ "python3", "-m", "rasa_nlu.server", "-c", "nlu_model_config.json" ]

@@ -7,85 +7,73 @@ RASA-NLU interprets natural languange text and extracts intents and entities.
 
 RASA-CORE uses RASA-NLU and adds dialogue processing.
 
-This project assembles two docker container images. One with RASA-NLU which can be used independently to extract intents and entities 
-from text and another RASA-CORE wich builds on the first and adds dialog processing.
+This project assembles one docker image which can run three different programs:
+- RASA-NLU server on port 5000
+- RASA Train Online - trains rasa-core dialog Engine
+- RASA-CORE server on port 5005
+
+A volume is created to share data between container instances and improve the
+dialogue throughout the time.
+
+```
+|
+ -- ocd-guy-nlu.md        (intents and entities for rasa nlu training)
+|
+ -- ocd-guy-stories       (dialog examples used by rasa core)
+```
 
 
-RASA-NLU
-========
+Setup
+-----
 
-Provides RASA-NLU as an http server.
+_Build the base system and created the shared volume_
 
-Location: ./docker/rasa-nlu
+```bash
+cd rasa-base
+./build.#!/bin/sh
+./createvolume.#!/bin/sh
+```
 
-Docker image name: ocd-rasa-nlu
+_Build the rasa-ai image with rasa-core and rasa-nlu binaries_
 
-Preparing the trining data
---------------------------
+```bash
+cd rasa-ai
+./build.#!/bin/sh
+```
 
-Edit the file `ocd-guy-nlu.md`
+Running
+-------
+
+0- BASH
+
+`./dockerbash` starts a bash shell in the container with access to the shared volume. It is useful for editing files or retrieving modified files before launching the servers or after running the online training.
+
+1- RASA-NLU
+
+Edit the file `ocd-guy-nlu.md` if you want to modify NLU training data.
+
+`./run-nlu.sh` starts the container and the rasa-nlu server listening on port 5000.
+
+To access the server use the rest endpoints (see https://nlu.rasa.com/http.html) at localhost:5000
+
 
 For more information see https://nlu.rasa.com/tutorial.html
 
 
-Building the docker image
--------------------------
+2- RASA-CORE
 
-Run the script `build.sh`
+Edit the file `domain.yml` if you want to change the dialog processor domain.
 
-Running the docker container
-----------------------------
+Edit the file `ocd-guy-stories.md` if you want to change the storied that rasa core seerver uses for dialog processing.
 
-Run the script `run.sh`
+`./run-training` starts the online training of rasa-core.
 
+`./run-core` start the rasa-core server on port 5005.
 
-Accessing the RASA-NLU server
------------------------------
+To access the server use the rest endpoints (see https://core.rasa.com/http.html) at localhost:5005
 
-Use the rest endpoints (see https://nlu.rasa.com/http.html) at localhost:5000
-
-
-
-RASA-CORE
-=========
-
-Provides RASA-CORE as an http server.
-
-Location: ./docker/rasa-core
-
-Docker image name: ocd-rasa-core
-
-Defining the Domain
--------------------
-
-Edit the file `domain.yml`
 
 For more information see https://core.rasa.com/tutorial_basics.html
-
-
-Defining the user stories
--------------------------
-
-Edit the file `ocd-guy-stories.md`
-
-For more information see https://core.rasa.com/tutorial_basics.html
-
-
-Building the docker image
--------------------------
-
-Run the script `build.sh`
-
-Running the docker container
-----------------------------
-
-Run the script `run.sh`
-
-
-Accessing the RASA-CORE server
------------------------------
-
-Use the rest endpoints (see https://core.rasa.com/http.html) at localhost:5005
 
 
 
@@ -95,3 +83,5 @@ More Info
 See:
 
 https://nlu.rasa.ai
+
+https://core.rasa.com

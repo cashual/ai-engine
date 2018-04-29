@@ -1,0 +1,1 @@
+docker run -p 5005:5005 --rm --mount type=volume,source=ocd-rasa-data,target=/app/data ocd-rasa-ai python3 -m rasa_core.server -d data/models/dialogue -u data/models/nlu/default/current -o out.log --cors '*'
